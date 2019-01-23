@@ -1,6 +1,6 @@
 .prijslijst-tabs{
   max-width: 900px;
-  margin: 36px auto 0;
+  margin: 16px auto 45px;
 }
 .prijslijst-tabs .x-tabs-list{
   background-color:#c4c4c4;
@@ -104,7 +104,7 @@
   font-size: 18px;
   line-height: 1.4;
 }
-.prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling::before{
+.prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling > .x-icon{
   opacity: 0;
   position: absolute;
   font-family: "FontAwesome";
@@ -114,7 +114,7 @@
   color: #ef7b00;
   left:40%
 }
-.prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling:hover::before{
+.prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling:hover > .x-icon{
   opacity: 1;
   left:45%;
 }
@@ -202,6 +202,9 @@
 .prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling{
 }
 @media only screen and (max-width:767px){
+  .prijslijst-tabs{
+    margin-bottom:16px;
+  }
   .prijslijst-tabs .x-tabs-list li .junior-stylist,
   .prijslijst-tabs .x-tabs-list li .regular-stylist,
   .prijslijst-tabs .x-tabs-list li .top-stylist,
@@ -210,6 +213,9 @@
   }
   .prijslijst-tabs .x-tabs-list li div{
     font-size: 16px;
+  }
+  .prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling > .x-icon{
+    display: none;
   }
   .prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling .boeken{
     flex-shrink: 0;
@@ -226,5 +232,13 @@
   .prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling .boeken:after,
   .prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling:before{
     display:none;
+  }
+  .prijslijst-tabs .x-tabs-panels .x-tabs-panel .behandeling .boeken .x-anchor-text-primary .x-icon{
+    background-color: #ef7b00;
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
   }
 }

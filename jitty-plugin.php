@@ -6,16 +6,28 @@ Description: Maakt de prijslijst via een shortcode volgens het ontwerp.
 Author: Odilio Witteveen
 Version: 0.0.9
 Author URI: https://odil.io
+Text Domain: jitty-plugin
 */
 
 // This is very messy code. Sorry for that. One day i'll have time to make this pretty
 
-function wpse_load_plugin_css() {
-    $plugin_url = plugin_dir_url( __FILE__ );
+$files = [
+  'lib/setup.php',
+  'lib/posttype.php',
+  'lib/shortcode.php',
+  'lib/mobielmenu.php',
+];
 
-    wp_enqueue_style( 'jitty/prijslijst-tabs', $plugin_url . 'assets/prijslijsten.css' );
-}
-add_action( 'wp_enqueue_scripts', 'wpse_load_plugin_css' );
+foreach ($files as $file):
 
-include "assets/posttype.php";
-include "assets/shortcode.php";
+  if (!$filepath = locate_template($file)):
+
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'imaga'), $file), E_USER_ERROR);
+
+  endif;
+
+  require_once $filepath;
+
+endforeach;
+
+unset($file, $filepath);

@@ -1,17 +1,20 @@
-<?php
+<?
+
+namespace Jitty\Plugin\Posttypes;
+
 /**
  * Treatments Post Type
  */
 function create_post_type_treatments() {
 
   $labels = array(
-    'name'                  => _x( 'Behandelingen', 'Behandeling General Name', 'imaga' ),
-    'singular_name'         => _x( 'Behandeling', 'Behandeling Singular Name', 'imaga' ),
+    'name'                  => _x( 'Behandelingen', 'Behandeling General Name', 'jitty-plugin' ),
+    'singular_name'         => _x( 'Behandeling', 'Behandeling Singular Name', 'jitty-plugin' ),
   );
 
   $args = array(
-    'label'                 => __( 'Behandelingen', 'imaga' ),
-    'description'           => __( 'Alle behandelingen van Jitty\'s', 'imaga' ),
+    'label'                 => __( 'Behandelingen', 'jitty-plugin' ),
+    'description'           => __( 'Alle behandelingen van Jitty\'s', 'jitty-plugin' ),
     'labels'                => $labels,
     'supports'              => array( 'title' ),
     'hierarchical'          => false,
